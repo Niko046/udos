@@ -29,14 +29,14 @@ public class LiderServiceImplement implements LiderService {
 
    
     @Override
-    public void updateLider(LiderModel liderModel, Integer identificador) {
-        liderModel.setIdentificador(identificador);
+    public void updateLider(LiderModel liderModel, String username) {
+        liderModel.setUsername(username);
         liderRepository.save(liderModel);
     }
 
     @Override
-    public void deleteLider(Integer identificador) {
-       liderRepository.deleteById(identificador);  
+    public void deleteLider(String username) {
+       liderRepository.deleteById(username);  
     }
     
 
@@ -46,8 +46,13 @@ public class LiderServiceImplement implements LiderService {
     }
 
     @Override
-    public LiderModel getLider(Integer identificador) {
-        return liderRepository.findByIdentificador(identificador);
+    public LiderModel getLider(String username) {
+        return liderRepository.findByUsername(username);
+    }
+
+    @Override
+    public List getLideresCoordinador(String coordinador) {
+        return liderRepository.findByCoordinador(coordinador);
     }
 
    

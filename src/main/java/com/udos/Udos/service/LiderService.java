@@ -15,9 +15,10 @@ public interface LiderService {
     public void createLider(LiderModel lider);
     
     public List getLideres();
-    public LiderModel getLider(Integer identificador);
-    public void updateLider(LiderModel LiderModel, Integer identificador);
-    public void deleteLider(Integer identificador);
+    public LiderModel getLider(String username);
+    public void updateLider(LiderModel LiderModel, String username);
+    public void deleteLider(String username);
+    public List getLideresCoordinador(String coordinador);
     
   
     

@@ -4,8 +4,8 @@
  */
 package com.udos.Udos.controller;
 
-import com.udos.Udos.model.LiderModel;
-import com.udos.Udos.service.LiderService;
+import com.udos.Udos.model.CoordinadorModel;
+import com.udos.Udos.service.CoordinadorService;
 import com.udos.Udos.utils.CustomResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,55 +25,49 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/v1/lider")
-public class LiderController {
+@RequestMapping("/api/v1/coordinador")
+public class CoordinadorController {
     @Autowired 
-    private LiderService liderService;
+    private CoordinadorService coordinadorService;
     
     @PostMapping("/")
-    public CustomResponse registrarLider(@RequestBody LiderModel lider) {
+    public CustomResponse registrarCoordinador(@RequestBody CoordinadorModel coordinador) {
         CustomResponse customeResponse = new CustomResponse();
-        liderService.createLider(lider);        
+        coordinadorService.createCoordinador(coordinador);        
         return customeResponse;
     }
     
     @GetMapping("/")
-    public CustomResponse getLideres(){
+    public CustomResponse getCoordinadores(){
         CustomResponse customeResponse = new CustomResponse();
-        customeResponse.setData(liderService.getLideres());
+        customeResponse.setData(coordinadorService.getCoordinadores());
         return customeResponse;
     }
     
     @GetMapping("/{username}")
-    public CustomResponse getLider(@RequestBody LiderModel lider, @PathVariable String username){
+    public CustomResponse getLider(@RequestBody CoordinadorModel coordinador, @PathVariable String username){
         CustomResponse customeResponse = new CustomResponse();
-        customeResponse.setData(liderService.getLider(username));
+        customeResponse.setData(coordinadorService.getCoordinador(username));
         return customeResponse;
     }
     
     
     
     @PutMapping("/{username}")
-    public CustomResponse updateLider(@RequestBody LiderModel lider, @PathVariable String username){
+    public CustomResponse updateCoordinador(@RequestBody CoordinadorModel coordinador, @PathVariable String username){
         CustomResponse customResponse = new CustomResponse();
-        liderService.updateLider(lider, username);        
+        coordinadorService.updateCoordinador(coordinador, username);        
         return customResponse;       
     
     }
     
     @DeleteMapping("/{username}")
-    public CustomResponse deleteLider(@PathVariable String username){
+    public CustomResponse deleteCoordinador(@PathVariable String username){
         CustomResponse customeResponse = new CustomResponse();
-        liderService.deleteLider(username);        
+        coordinadorService.deleteCoordinador(username);        
         return customeResponse;       
     
     }
     
-    @GetMapping("/lideres/{coordinador}")
-    public CustomResponse getPromovidosLider(@PathVariable String coordinador){
-       CustomResponse customResponse = new CustomResponse(); 
-       customResponse.setData(liderService.getLideresCoordinador(coordinador));
-       return customResponse;
-    }
 
 }

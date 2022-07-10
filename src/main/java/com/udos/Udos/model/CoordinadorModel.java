@@ -17,8 +17,8 @@ import javax.persistence.Table;
  * @author Niko
  */
 @Entity
-@Table(name= "lider")
-public class LiderModel {
+@Table(name= "coordinador")
+public class CoordinadorModel {
     @Id
     @Column
     private String username ;
@@ -26,15 +26,7 @@ public class LiderModel {
     private String nombres ;
     private String apellido_paterno;
     private String apellido_materno;
-    private String coordinador;
 
-    public String getCoordinador() {
-        return coordinador;
-    }
-
-    public void setCoordinador(String coordinador) {
-        this.coordinador = coordinador;
-    }
 
     public String getUsername() {
         return username;
