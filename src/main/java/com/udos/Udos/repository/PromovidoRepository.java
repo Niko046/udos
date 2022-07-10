@@ -17,6 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PromovidoRepository extends JpaRepository<PromovidoModel,String> {
     public PromovidoModel findByCurp(String curp); 
-   public List findByidentificador(Integer identificador); 
+   public List findByidentificador(String identificador); 
    public void deleteById(String curp); 
 }

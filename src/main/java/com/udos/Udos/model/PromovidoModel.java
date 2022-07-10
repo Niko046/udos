@@ -34,7 +34,7 @@ public class PromovidoModel {
     private String telefono;
     private String email;
     private boolean documentos;
-    private Integer identificador;
+    private String identificador;
     private String nombrelider;
 
     public String getNombrelider() {
@@ -149,11 +149,11 @@ public class PromovidoModel {
         this.documentos = documentos;
     }
 
-    public Integer getIdentificador() {
+    public String getIdentificador() {
         return identificador;
     }
 
-    public void setIdentificador(Integer identificador) {
+    public void setIdentificador(String identificador) {
         this.identificador = identificador;
     }
     

@@ -17,7 +17,7 @@ public interface PromovidoService {
     public List getPromovidos();
     public PromovidoModel getPromovido(String curp);
     
-    public List getPromovidosLider(Integer identificador);
+    public List getPromovidosLider(String identificador);
     public void updatePromovido(PromovidoModel promovido, String curp);
     public void deletePromovido(String curp);
     

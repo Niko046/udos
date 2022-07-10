@@ -48,7 +48,7 @@ public class PromovidoServiceImplement implements PromovidoService {
     }
 
     @Override
-    public List getPromovidosLider(Integer identificador) {
+    public List getPromovidosLider(String identificador) {
         return promovidoRepository.findByidentificador(identificador);
     }
 

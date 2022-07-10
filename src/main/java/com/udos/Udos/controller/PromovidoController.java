@@ -77,7 +77,7 @@ public class PromovidoController {
     }
     
     @GetMapping("/promovidos/{identificador}")
-    public CustomResponse getPromovidosLider(@PathVariable Integer identificador){
+    public CustomResponse getPromovidosLider(@PathVariable String identificador){
        CustomResponse customResponse = new CustomResponse(); 
        customResponse.setData(promovidoService.getPromovidosLider(identificador));
        return customResponse;
